@@ -84,7 +84,6 @@ public class createEmail {
 
 		WebElement compose = driver.findElement(
 				By.xpath("//a[text()='Compose']"));
-
 		compose.click();
 
 		System.out.println("[PASS] Compose option clicked.");
@@ -127,8 +126,7 @@ public class createEmail {
 		System.out.println("[STEP 7] Opening Contact selection popup...");
 
 		// Locate Select icon for choosing a contact
-		WebElement contact = driver.findElement(
-				By.xpath("//img[@title='Select']"));
+		WebElement contact = driver.findElement(By.xpath("//img[@title='Select']"));
 
 		contact.click();
 
