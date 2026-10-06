@@ -1,0 +1,11 @@
+<suite name = "batch">
+	<test name= "test_01">
+	<classes>
+		<class name = "type_of_exe_batch.ContactTest"/>
+		<class name = "type_of_exe_batch.LeadTest"/>
+		<class name = "type_of_exe_batch.OrgTest"/>
+		<class name = "type_of_exe_batch.OpptTest"/>
+	
+	</classes>
+	</test>
+</suite>
