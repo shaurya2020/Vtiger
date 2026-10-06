@@ -27,6 +27,7 @@ public class pcWinHandel {
 		Thread.sleep(3000);
 		driver.close();
 
+		
 //		step 6> come back home
 		driver.switchTo().window(PID);
 	}
