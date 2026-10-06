@@ -150,7 +150,9 @@ public class createEmail {
 			}
 		}
 
+		
 		// Wait until three browser windows are available
+		
 		WebDriverWait wait1 = new WebDriverWait(
 				driver, Duration.ofSeconds(20));
 
