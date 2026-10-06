@@ -45,22 +45,7 @@ public class Opportunities {
 		WebElement OppName = driver.findElement(By.name("potentialname"));
 		OppName.sendKeys("Zudio");
 
-		/*
-		 * String PID = driver.getWindowHandle();
-		 * 
-		 * driver.findElement(By.xpath(
-		 * "//*[@id=\"basicTab\"]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[4]/td[2]/img"
-		 * )).click();
-		 * 
-		 * Set<String> CIDs = driver.getWindowHandles();
-		 * 
-		 * for (String i : CIDs) { driver.switchTo().window(i); }
-		 * driver.findElement(By.id("1")).click();
-		 * 
-		 * 
-		 * Thread.sleep(1000); driver.close();
-		 * 
-		 */
+	
 		WebElement related = driver.findElement(By.id("related_to_display"));
 		related.sendKeys("old");
 
