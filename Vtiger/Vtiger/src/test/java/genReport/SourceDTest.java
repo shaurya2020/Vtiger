@@ -22,6 +22,7 @@ public class SourceDTest {
 		spark.config().setTheme(Theme.DARK);
 
 		ExtentReports report = new ExtentReports();
+		
 		report.attachReporter(spark);
 		report.setSystemInfo("Browser", "Chrome");
 		report.setSystemInfo("OS", "Windows 11");
@@ -57,6 +58,7 @@ public class SourceDTest {
 		} else {
 			loginTest.log(Status.FAIL, "Login failed");
 		}
+
 		report.flush();
 
 		driver.quit();
