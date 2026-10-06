@@ -143,7 +143,6 @@ public class createContacts extends baseTest {
 		System.out.println("[PASS] Contact Save button clicked.");
 		System.out.println("[INFO] Contact creation process completed.");
 
-		
 		// VALIDATION
 		
 		System.out.println("==================================================");
