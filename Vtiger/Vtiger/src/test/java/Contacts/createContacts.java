@@ -9,6 +9,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import base_test.baseTest;
 import crm_reop.ContactPage;
 import crm_reop.VeyContactPage;
@@ -22,6 +26,7 @@ public class createContacts extends baseTest {
 	@Test
 	public void cratecontact() throws EncryptedDocumentException, IOException  {
 
+		ExtentTest test = report.createTest("createContact");
 		String LastName = FileUtility.GetDataExcellFile("Contact", 4, 0);
 		String Email = FileUtility.GetDataExcellFile("Contact", 4, 4);
 		String asi = FileUtility.GetDataExcellFile("Contact", 4, 2);
@@ -67,5 +72,7 @@ public class createContacts extends baseTest {
 		Assert.assertEquals(Vlead,emp);
 		Assert.assertEquals(asi,VAssis);
 		Assert.assertEquals(VDescrpt,Dis);
+		
+		test.log(Status.PASS, "this is passed");
 	}
 }
