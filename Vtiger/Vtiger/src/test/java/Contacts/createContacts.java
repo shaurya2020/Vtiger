@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Set;
 
 import org.apache.poi.EncryptedDocumentException;
-import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -27,6 +26,7 @@ public class createContacts extends baseTest {
 	public void cratecontact() throws EncryptedDocumentException, IOException  {
 
 		ExtentTest test = report.createTest("createContact");
+		
 		String LastName = FileUtility.GetDataExcellFile("Contact", 4, 0);
 		String Email = FileUtility.GetDataExcellFile("Contact", 4, 4);
 		String asi = FileUtility.GetDataExcellFile("Contact", 4, 2);
@@ -37,14 +37,14 @@ public class createContacts extends baseTest {
 		ct.getLastname().sendKeys(LastName);
 		
 		String PID2 = driver.getWindowHandle();
-		WebDriverUtility wdutil = new WebDriverUtility(driver);
-		wdutil.switchToWindowByTitle("gooduivtiger");
+//		WebDriverUtility wdutil = new WebDriverUtility(driver);
+//		wdutil.switchToWindowByTitle("gooduivtiger");
 		
 		driver.findElement(By.xpath("//input[@name='account_id']/following-sibling::img[@alt='Select']")).click();
-//		Set<String> CID2 = driver.getWindowHandles();
-//		for (String i : CID2) {
-//			driver.switchTo().window(i);
-//		}
+		Set<String> CID2 = driver.getWindowHandles();
+		for (String i : CID2) {
+			driver.switchTo().window(i);
+		}
 		driver.findElement(By.id("3")).click();
 		driver.switchTo().window(PID2);
 		
