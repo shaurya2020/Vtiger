@@ -14,43 +14,13 @@ public class createEmail {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		// ============================================================
-		// TEST CASE       : Create and Send Email
-		// MODULE          : Email
-		// APPLICATION     : Vtiger CRM
-		// TEST TYPE       : Functional UI Automation
-		// AUTOMATION TOOL : Selenium WebDriver
-		// BROWSER         : Google Chrome
-		// PURPOSE         : Verify that a user can compose and send
-		//                   an email to a selected contact.
-		// ============================================================
-
-		System.out.println("=================================================");
-		System.out.println("TEST CASE STARTED : Create and Send Email");
-		System.out.println("=================================================");
-
-		// ------------------------------------------------------------
-		// Step 1: Launch Chrome browser
-		// ------------------------------------------------------------
-		System.out.println("[STEP 1] Launching Chrome browser...");
-
+	
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-		System.out.println("[PASS] Chrome browser launched successfully.");
-
-		// ------------------------------------------------------------
-		// Step 2: Open Vtiger CRM application
-		// ------------------------------------------------------------
-
 		driver.get("http://localhost:8888/index.php");
-
-
-		System.out.println("[STEP 3] Logging into Vtiger CRM...");
-
-		// Locate username field and enter username
 		WebElement user = driver.findElement(By.name("user_name"));
 		user.sendKeys("admin");
 
