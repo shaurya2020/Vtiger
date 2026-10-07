@@ -39,7 +39,7 @@ public class baseTest {
 		spark = new ExtentSparkReporter("./ad_reports/" + time + ".html");
 
 		spark.config().setDocumentTitle("Viger");
-		spark.config().setReportName("new reports");
+		spark.config().setReportName("Reports");
 		spark.config().setTheme(Theme.DARK);
 
 		report = new ExtentReports();

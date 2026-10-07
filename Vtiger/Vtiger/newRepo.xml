@@ -1,0 +1,18 @@
+
+<suite parallel="tests" name="Suite">
+  <test  name="Test">
+    <classes>
+      <class name="Contacts.createContacts"/>
+    </classes>
+  </test>
+  <test  name="Test1">
+    <classes>
+      <class name="leads.createLead"/>
+    </classes>
+  </test>
+  <test  name="Test2">
+    <classes>
+      <class name="Organizations.CreateOrganization"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -73,6 +73,6 @@ public class createContacts extends baseTest {
 		Assert.assertEquals(asi,VAssis);
 		Assert.assertEquals(VDescrpt,Dis);
 		
-		test.log(Status.PASS, "this is passed");
+		test.log(Status.PASS, "Contact is passed");
 	}
 }
