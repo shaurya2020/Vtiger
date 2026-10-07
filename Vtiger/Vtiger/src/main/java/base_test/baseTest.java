@@ -17,34 +17,17 @@ import genric_utility.FileUtility;
 import genric_utility.WebDriverUtility;
 
 public class baseTest {
-	protected WebDriver driver ;
+	public WebDriver driver;
 
 	@BeforeClass
 	public void brosetup() throws IOException, ParseException {
-		driver = new ChromeDriver();
-//			JSON TEST DATA
+//		JSON TEST DATA
 		String url = FileUtility.GetDataFJsonFile("url");
-		 System.out.println("[STEP 01] Reading login data from JSON file...");
-
-		 System.out.println("[INFO] Application URL loaded successfully.");
-		 System.out.println("[INFO] Username loaded successfully.");
-		 System.out.println("[INFO] Password loaded successfully.");
-
-		 System.out.println("[STEP 03] Launching Chrome browser...");
-
+//		 WebDriver 
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-		 System.out.println("[INFO] Chrome browser launched successfully.");
-		 System.out.println("[INFO] Browser window maximized.");
-		 System.out.println("[INFO] Implicit wait configured : 15 seconds.");
-
-//			OPEN APPLICATION
-
-		 System.out.println("[STEP 04] Opening Vtiger CRM application...");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get(url);
-		 System.out.println("[PASS] Vtiger CRM application opened successfully.");
-
 	}
 
 	@BeforeMethod
@@ -52,49 +35,29 @@ public class baseTest {
 		// LOGIN
 		String username = FileUtility.GetDataFJsonFile("un");
 		String password = FileUtility.GetDataFJsonFile("pwd");
-		 System.out.println("[STEP 05] Performing application login...");
 
 		LoginPage lg = new LoginPage(driver);
-
-		// Locate username field using Page Object Model
-		WebElement user = lg.getusername();
-		user.sendKeys(username);
-		 System.out.println("[INFO] Username entered successfully.");
-
-		// Locate password field using Page Object Model
-		WebElement pass = lg.getPassword();
-		pass.sendKeys(password);
-		 System.out.println("[INFO] Password entered successfully.");
-
-		// Locate Login button
-		WebElement login = lg.getbutton();
-		login.click();
-
-		 System.out.println("[PASS] Login button clicked.");
-		 System.out.println("[PASS] User logged into the application.");
-
+		lg.getusername().sendKeys(username);
+		lg.getPassword().sendKeys(password);
+		lg.getbutton().click();
 	}
 
 	@AfterMethod
 	public void brologout() {
 
-		System.out.println("\n[STEP 16] Logging out from application...");
 		SignOut sn = new SignOut(driver);
 		WebElement profile = sn.getPro();
 
 		WebDriverUtility wdUtil = new WebDriverUtility(driver);
 		wdUtil.hover(profile);
-		 System.out.println("[INFO] Profile menu opened.");
 		WebElement Out = sn.getSingnOut();
 		Out.click();
-		 System.out.println("[PASS] User logged out successfully.");
-
 	}
 
 	@AfterClass
 	public void broteardown() {
 		driver.quit();
-		 System.out.println("[PASS] Browser closed successfully.");
+		System.out.println("[PASS] Browser closed successfully.");
 
 	}
 

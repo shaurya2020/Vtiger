@@ -17,7 +17,7 @@ public class Opportunities {
 		// TODO Auto-generated method stubs
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		String url = FileUtility.GetDataFJsonFile("url");
 		driver.get(url);
@@ -78,7 +78,6 @@ public class Opportunities {
 		WebElement Probability = driver.findElement(By.id("probability"));
 		Probability.sendKeys("88%");
 
-		Thread.sleep(20000);
 
 		driver.quit();
 

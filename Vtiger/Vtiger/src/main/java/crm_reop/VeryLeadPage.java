@@ -10,8 +10,6 @@ public class VeryLeadPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="dtlview_Last Name")
-	private WebElement lastname;
 	
 	public WebElement getLastname() {
 		return lastname;
@@ -33,6 +31,9 @@ public class VeryLeadPage {
 		return Num;
 	}
 
+	@FindBy(id="dtlview_Last Name")
+	private WebElement lastname;
+	
 	@FindBy(id="dtlview_Company")
 	private WebElement Company;
 	

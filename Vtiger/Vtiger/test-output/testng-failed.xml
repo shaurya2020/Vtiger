@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Organizations.CreateOrganization">
+      <class name="leads.createLead">
         <methods>
-          <include name="createOrg"/>
+          <include name="brologout"/>
+          <include name="brologin"/>
+          <include name="createlead"/>
+          <include name="broteardown"/>
+          <include name="brosetup"/>
         </methods>
-      </class> <!-- Organizations.CreateOrganization -->
+      </class> <!-- leads.createLead -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
