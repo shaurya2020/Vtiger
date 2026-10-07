@@ -1,6 +1,8 @@
 package leads;
 
 import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -13,12 +15,13 @@ import genric_utility.WebDriverUtility;
 
 public class createLead extends baseTest {
 	@Test
-	public void createlead() throws IOException, ParseException {
+	public void createlead() throws EncryptedDocumentException, IOException {
 
 		String LastName = FileUtility.GetDataExcellFile("Lead", 4, 0);
 		String CompanyName = FileUtility.GetDataExcellFile("Lead", 4, 1);
 		String Num = FileUtility.GetDataExcellFile("Lead", 4, 4);
 		String Emp = "Employee";
+		String IndSel = "Education";
 
 
 		Leadspage lp = new Leadspage(driver);
@@ -32,7 +35,6 @@ public class createLead extends baseTest {
 		WebElement lead = lp.getLead();
 		lsp.select(lead, Emp);
 		
-		String IndSel = "Education";
 		WebElement Ind = lp.getInd();
 		lsp.select(Ind, IndSel);
 		

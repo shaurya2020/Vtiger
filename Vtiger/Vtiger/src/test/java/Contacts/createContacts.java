@@ -3,6 +3,7 @@ package Contacts;
 import java.io.IOException;
 import java.util.Set;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -19,16 +20,16 @@ public class createContacts extends baseTest {
 //	public static void main(String[] args)throws InterruptedException,IOException, ParseException {
 
 	@Test
-	public void cratecontact() throws IOException, ParseException, InterruptedException {
+	public void cratecontact() throws EncryptedDocumentException, IOException  {
 
 		String LastName = FileUtility.GetDataExcellFile("Contact", 4, 0);
 		String Email = FileUtility.GetDataExcellFile("Contact", 4, 4);
 		String asi = FileUtility.GetDataExcellFile("Contact", 4, 2);
 		ContactPage ct = new ContactPage(driver);
+
 		ct.getLink().click();
 		ct.getAddicon().click();
 		ct.getLastname().sendKeys(LastName);
-		
 		
 		String PID2 = driver.getWindowHandle();
 		WebDriverUtility wdutil = new WebDriverUtility(driver);

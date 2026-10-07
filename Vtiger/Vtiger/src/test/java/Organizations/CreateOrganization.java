@@ -2,6 +2,7 @@ package Organizations;
 
 import java.io.IOException;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -17,13 +18,17 @@ import genric_utility.WebDriverUtility;
 public class CreateOrganization extends baseTest {
 
 	@Test
-	public void createOrg() throws IOException, ParseException {
+	public void createOrg() throws EncryptedDocumentException, IOException  {
 
 		JavaUtility jd = new JavaUtility();
 		int zs = jd.generateRandomNumber(1000);
 		
 		String accountName = FileUtility.GetDataExcellFile("ORGname", 4, 0) + zs;
 		String email = FileUtility.GetDataExcellFile("ORGname", 5, 4);
+		String cs = "Customer";
+		String sell = "Education";
+		String Num = "9140050" + zs;
+		
 		OrgPage Og = new OrgPage(driver);
 
 		Og.getLink().click();
@@ -31,16 +36,13 @@ public class CreateOrganization extends baseTest {
 		mod.click();
 		Og.getAccname().sendKeys(accountName);
 
-		String Num = "9140050" + zs;
 		Og.getPhone().sendKeys(Num);
 		Og.getEmail().sendKeys(email);
 
-		String sell = "Education";
 		WebElement Ind = Og.getIndustry();
 		WebDriverUtility sg = new WebDriverUtility(driver);
 		sg.select(Ind, sell);
 
-		String cs = "Customer";
 		WebElement Type = Og.getAccounttype();
 		WebDriverUtility Tys = new WebDriverUtility(driver);
 		Tys.select(Type, cs);
