@@ -24,6 +24,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import crm_reop.LoginPage;
 import crm_reop.SignOut;
 import genric_utility.FileUtility;
+import genric_utility.JavaUtility;
 import genric_utility.WebDriverUtility;
 
 public class baseTest {
@@ -34,16 +35,16 @@ public class baseTest {
 	@BeforeSuite
 	public void repConfig() {
 //		configuration
-//		String time = JavaUtility.getCurrentDateTime();
+		String time = JavaUtility.getCurrentDateTime();
 		spark = new ExtentSparkReporter("./ad_reports/" + time + ".html");
 
-		spark.config().setDocumentTitle("sauce demo reports");
-		spark.config().setReportName("login reports");
+		spark.config().setDocumentTitle("Viger");
+		spark.config().setReportName("new reports");
 		spark.config().setTheme(Theme.DARK);
 
 		report = new ExtentReports();
 		report.attachReporter(spark);
-		report.setSystemInfo("browser", "edge");
+		report.setSystemInfo("browser", "chrome");
 		report.setSystemInfo("window", "11");
 	} 
 	@BeforeClass
@@ -101,7 +102,7 @@ public class baseTest {
 	}
 		@AfterSuite
 		public void repbackup() {
-			
+			report.flush();
 		
 	}
 
