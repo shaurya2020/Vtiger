@@ -30,6 +30,7 @@ public class createContacts extends baseTest {
 		String LastName = FileUtility.GetDataExcellFile("Contact", 4, 0);
 		String Email = FileUtility.GetDataExcellFile("Contact", 4, 4);
 		String asi = FileUtility.GetDataExcellFile("Contact", 4, 2);
+		String emp = FileUtility.GetDataExcellFile("Contact", 4, 1);
 		ContactPage ct = new ContactPage(driver);
 
 		ct.getLink().click();
@@ -37,8 +38,6 @@ public class createContacts extends baseTest {
 		ct.getLastname().sendKeys(LastName);
 		
 		String PID2 = driver.getWindowHandle();
-//		WebDriverUtility wdutil = new WebDriverUtility(driver);
-//		wdutil.switchToWindowByTitle("gooduivtiger");
 		
 		driver.findElement(By.xpath("//input[@name='account_id']/following-sibling::img[@alt='Select']")).click();
 		Set<String> CID2 = driver.getWindowHandles();
@@ -48,7 +47,6 @@ public class createContacts extends baseTest {
 		driver.findElement(By.id("3")).click();
 		driver.switchTo().window(PID2);
 		
-		String emp = "Employee";
 		WebElement ld = ct.getLead();
 		WebDriverUtility ns = new WebDriverUtility(driver);
 		ns.select(ld, emp);

@@ -25,9 +25,8 @@ public class createLead extends baseTest {
 		String LastName = FileUtility.GetDataExcellFile("Lead", 4, 0);
 		String CompanyName = FileUtility.GetDataExcellFile("Lead", 4, 1);
 		String Num = FileUtility.GetDataExcellFile("Lead", 4, 4);
-		String Emp = "Employee";
-		String IndSel = "Education";
-
+		String Emp = FileUtility.GetDataExcellFile("Lead", 4, 2);
+		String IndSel = FileUtility.GetDataExcellFile("Lead", 4, 3);
 
 		Leadspage lp = new Leadspage(driver);
 		lp.getModule().click();

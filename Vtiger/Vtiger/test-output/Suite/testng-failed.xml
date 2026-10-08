@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel="tests" name="Failed suite [Suite]">
-  <test thread-count="5" parallel="tests" name="Test(failed)">
-    <parameter name="pass" value="secret_sauce"/>
-    <parameter name="browser" value="edge"/>
-    <parameter name="user" value="standard_user"/>
+  <test thread-count="5" parallel="tests" name="Test2(failed)">
     <classes>
-      <class name="Testing.SourceDemoEx">
+      <class name="Organizations.CreateOrganization">
         <methods>
-          <include name="login" invocation-numbers="0"/>
+          <include name="brologin"/>
+          <include name="brologout"/>
+          <include name="repConfig"/>
+          <include name="broteardown"/>
+          <include name="repbackup"/>
+          <include name="brosetup"/>
+          <include name="createOrg"/>
         </methods>
-      </class> <!-- Testing.SourceDemoEx -->
+      </class> <!-- Organizations.CreateOrganization -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Suite] -->

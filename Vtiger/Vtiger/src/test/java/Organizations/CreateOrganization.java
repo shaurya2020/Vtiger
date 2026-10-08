@@ -29,9 +29,9 @@ public class CreateOrganization extends baseTest {
 		
 		String accountName = FileUtility.GetDataExcellFile("ORGname", 4, 0) + zs;
 		String email = FileUtility.GetDataExcellFile("ORGname", 5, 4);
-		String cs = "Customer";
-		String sell = "Education";
-		String Num = "9140050" + zs;
+		String cs = FileUtility.GetDataExcellFile("ORGname", 1, 2);
+		String Num = FileUtility.GetDataExcellFile("ORGname", 3, 3);
+		String sell = FileUtility.GetDataExcellFile("ORGname", 4, 1);
 		
 		OrgPage Og = new OrgPage(driver);
 
@@ -39,7 +39,6 @@ public class CreateOrganization extends baseTest {
 		WebElement mod = Og.getCss();
 		mod.click();
 		Og.getAccname().sendKeys(accountName);
-
 		Og.getPhone().sendKeys(Num);
 		Og.getEmail().sendKeys(email);
 

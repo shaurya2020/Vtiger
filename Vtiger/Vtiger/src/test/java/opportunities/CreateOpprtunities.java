@@ -1,4 +1,3 @@
-
 package opportunities;
 
 import java.io.IOException;
@@ -33,6 +32,7 @@ public class CreateOpprtunities extends baseTest {
 				.click();
 
 		String PID = driver.getWindowHandle();
+		
 		WebDriverUtility wdutil = new WebDriverUtility(driver);
 		wdutil.switchToWindowByTitle("sd");
 		
@@ -42,9 +42,11 @@ public class CreateOpprtunities extends baseTest {
 		String amt = "5000";
 		WebElement amount = driver.findElement(By.name("amount"));
 		amount.sendKeys(amt);
+		
 		String Sss = "New Business";
 		WebElement ss = driver.findElement(By.name("opportunity_type"));
 		Select singleselect = new Select(ss);
+		
 		singleselect.selectByValue(Sss);
 		WebElement date = driver.findElement(By.name("closingdate"));
 		date.sendKeys("2026/09/18");

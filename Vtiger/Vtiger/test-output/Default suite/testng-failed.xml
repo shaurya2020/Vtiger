@@ -3,7 +3,7 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Contacts.createContacts">
+      <class name="Organizations.CreateOrganization">
         <methods>
           <include name="repConfig"/>
           <include name="brologout"/>
@@ -11,9 +11,9 @@
           <include name="broteardown"/>
           <include name="repbackup"/>
           <include name="brosetup"/>
-          <include name="cratecontact"/>
+          <include name="createOrg"/>
         </methods>
-      </class> <!-- Contacts.createContacts -->
+      </class> <!-- Organizations.CreateOrganization -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
