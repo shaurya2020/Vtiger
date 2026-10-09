@@ -12,41 +12,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import crm_reop.LoginPage;
 import crm_reop.SignOut;
 import genric_utility.FileUtility;
-import genric_utility.JavaUtility;
 import genric_utility.WebDriverUtility;
 
 public class baseTest {
 	public WebDriver driver;
-	public static ExtentSparkReporter spark;
-	public static ExtentReports report;
 	
-	@BeforeSuite
-	public void repConfig() {
-//		configuration
-		String time = JavaUtility.getCurrentDateTime();
-		spark = new ExtentSparkReporter("./ad_reports/" + time + ".html");
-
-		spark.config().setDocumentTitle("Viger");
-		spark.config().setReportName("Reports");
-		spark.config().setTheme(Theme.DARK);
-
-		report = new ExtentReports();
-		report.attachReporter(spark);
-		report.setSystemInfo("browser", "chrome");
-		report.setSystemInfo("window", "11");
-	} 
 	@BeforeClass
 	public void brosetup() throws IOException, ParseException {
 //		JSON TEST DATA
@@ -99,11 +76,7 @@ public class baseTest {
 	public void broteardown() {
 		driver.quit();
 		System.out.println("[PASS] Browser closed successfully.");
-	}
-		@AfterSuite
-		public void repbackup() {
-			report.flush();
-		
+	
 	}
 
 }

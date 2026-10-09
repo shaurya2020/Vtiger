@@ -5,10 +5,8 @@ import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 
 import base_test.baseTest;
 import crm_reop.Leadspage;
@@ -16,11 +14,11 @@ import crm_reop.VeryLeadPage;
 import genric_utility.FileUtility;
 import genric_utility.WebDriverUtility;
 
+@Listeners(base_test.Listner_implementation.class)
 public class createLead extends baseTest {
 	@Test
 	public void createlead() throws EncryptedDocumentException, IOException {
 		
-		ExtentTest test = report.createTest("createLead");
 
 		String LastName = FileUtility.GetDataExcellFile("Lead", 4, 0);
 		String CompanyName = FileUtility.GetDataExcellFile("Lead", 4, 1);
@@ -57,7 +55,6 @@ public class createLead extends baseTest {
 		Assert.assertEquals(Emp, VleadS);
 		Assert.assertEquals(IndSel, VInd);
 		Assert.assertEquals(Num, VNum);
-		test.log(Status.PASS, "Lead page  is passed");
 	}
 
 }

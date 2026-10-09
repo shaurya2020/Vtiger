@@ -7,10 +7,8 @@ import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 
 import base_test.baseTest;
 import crm_reop.ContactPage;
@@ -18,14 +16,13 @@ import crm_reop.VeyContactPage;
 import genric_utility.FileUtility;
 import genric_utility.WebDriverUtility;
 
-
+@Listeners(base_test.Listner_implementation.class)
 public class createContacts extends baseTest {
 //	public static void main(String[] args)throws InterruptedException,IOException, ParseException {
 
 	@Test
 	public void cratecontact() throws EncryptedDocumentException, IOException  {
 
-		ExtentTest test = report.createTest("createContact");
 		
 		String LastName = FileUtility.GetDataExcellFile("Contact", 4, 0);
 		String Email = FileUtility.GetDataExcellFile("Contact", 4, 4);
@@ -71,6 +68,5 @@ public class createContacts extends baseTest {
 		Assert.assertEquals(asi,VAssis);
 		Assert.assertEquals(VDescrpt,Dis);
 		
-		test.log(Status.PASS, "Contact is passed");
 	}
 }

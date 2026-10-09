@@ -5,10 +5,8 @@ import java.io.IOException;
 import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 
 import base_test.baseTest;
 import crm_reop.OrgPage;
@@ -17,12 +15,10 @@ import genric_utility.FileUtility;
 import genric_utility.JavaUtility;
 import genric_utility.WebDriverUtility;
 
+@Listeners(base_test.Listner_implementation.class)
 public class CreateOrganization extends baseTest {
-
 	@Test
 	public void createOrg() throws EncryptedDocumentException, IOException  {
-		
-		ExtentTest test = report.createTest("createOrg");
 
 		JavaUtility jd = new JavaUtility();
 		int zs = jd.generateRandomNumber(1000);
@@ -38,6 +34,7 @@ public class CreateOrganization extends baseTest {
 		Og.getLink().click();
 		WebElement mod = Og.getCss();
 		mod.click();
+		
 		Og.getAccname().sendKeys(accountName);
 		Og.getPhone().sendKeys(Num);
 		Og.getEmail().sendKeys(email);
@@ -63,6 +60,5 @@ public class CreateOrganization extends baseTest {
 		Assert.assertEquals(VEmail, email);
 		Assert.assertEquals(VInd, sell);
 		Assert.assertEquals(Vtype, cs);
-		test.log(Status.PASS, "Org Test is passed");
 	}
 }

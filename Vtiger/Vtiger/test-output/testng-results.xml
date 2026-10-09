@@ -2,40 +2,32 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-10-08T18:54:32 IST" name="Default suite" finished-at="2026-10-08T18:56:19 IST" duration-ms="106493">
+  <suite started-at="2026-10-08T21:22:49 IST" name="Default suite" finished-at="2026-10-08T21:23:36 IST" duration-ms="47774">
     <groups>
     </groups>
-    <test started-at="2026-10-08T18:54:32 IST" name="Default test" finished-at="2026-10-08T18:56:19 IST" duration-ms="106493">
-      <class name="opportunities.CreateOpprtunities">
-        <test-method is-config="true" signature="repConfig()[pri:0, instance:opportunities.CreateOpprtunities@49438269]" started-at="2026-10-08T18:54:31 IST" name="repConfig" finished-at="2026-10-08T18:54:32 IST" duration-ms="664" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- repConfig -->
-        <test-method is-config="true" signature="brosetup()[pri:0, instance:opportunities.CreateOpprtunities@49438269]" started-at="2026-10-08T18:54:32 IST" name="brosetup" finished-at="2026-10-08T18:54:38 IST" duration-ms="5993" status="PASS">
+    <test started-at="2026-10-08T21:22:49 IST" name="Default test" finished-at="2026-10-08T21:23:36 IST" duration-ms="47774">
+      <class name="Contacts.createContacts">
+        <test-method is-config="true" signature="brosetup()[pri:0, instance:Contacts.createContacts@367ffa75]" started-at="2026-10-08T21:22:49 IST" name="brosetup" finished-at="2026-10-08T21:22:59 IST" duration-ms="9850" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- brosetup -->
-        <test-method is-config="true" signature="brologin()[pri:0, instance:opportunities.CreateOpprtunities@49438269]" started-at="2026-10-08T18:54:38 IST" name="brologin" finished-at="2026-10-08T18:54:49 IST" duration-ms="11334" status="PASS">
+        <test-method is-config="true" signature="brologin()[pri:0, instance:Contacts.createContacts@367ffa75]" started-at="2026-10-08T21:22:59 IST" name="brologin" finished-at="2026-10-08T21:23:08 IST" duration-ms="9078" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- brologin -->
-        <test-method signature="createopp()[pri:0, instance:opportunities.CreateOpprtunities@49438269]" started-at="2026-10-08T18:54:49 IST" name="createopp" finished-at="2026-10-08T18:55:42 IST" duration-ms="52839" status="PASS">
+        <test-method signature="cratecontact()[pri:0, instance:Contacts.createContacts@367ffa75]" started-at="2026-10-08T21:23:08 IST" name="cratecontact" finished-at="2026-10-08T21:23:34 IST" duration-ms="26703" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createopp -->
-        <test-method is-config="true" signature="brologout()[pri:0, instance:opportunities.CreateOpprtunities@49438269]" started-at="2026-10-08T18:55:42 IST" name="brologout" finished-at="2026-10-08T18:55:47 IST" duration-ms="5135" status="PASS">
+        </test-method> <!-- cratecontact -->
+        <test-method is-config="true" signature="brologout()[pri:0, instance:Contacts.createContacts@367ffa75]" started-at="2026-10-08T21:23:34 IST" name="brologout" finished-at="2026-10-08T21:23:36 IST" duration-ms="1795" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- brologout -->
-        <test-method is-config="true" signature="broteardown()[pri:0, instance:opportunities.CreateOpprtunities@49438269]" started-at="2026-10-08T18:55:47 IST" name="broteardown" finished-at="2026-10-08T18:56:19 IST" duration-ms="31104" status="PASS">
+        <test-method is-config="true" signature="broteardown()[pri:0, instance:Contacts.createContacts@367ffa75]" started-at="2026-10-08T21:23:36 IST" name="broteardown" finished-at="2026-10-08T21:23:36 IST" duration-ms="272" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- broteardown -->
-        <test-method is-config="true" signature="repbackup()[pri:0, instance:opportunities.CreateOpprtunities@49438269]" started-at="2026-10-08T18:56:19 IST" name="repbackup" finished-at="2026-10-08T18:56:19 IST" duration-ms="630" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- repbackup -->
-      </class> <!-- opportunities.CreateOpprtunities -->
+      </class> <!-- Contacts.createContacts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
