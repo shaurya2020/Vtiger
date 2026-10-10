@@ -13,12 +13,12 @@ public class OppertunityPage {
 	@FindBy(linkText = "Opportunities")
 	private WebElement link;
 
-	public WebElement getLink() {
+	public WebElement getmoduleLink() {
 		return link;
 	}
 
-	public WebElement getMod() {
-		return mod;
+	public WebElement getmodule() {
+		return module;
 	}
 
 	public WebElement getOppName() {
@@ -40,6 +40,10 @@ public class OppertunityPage {
 	public WebElement getClosingdate() {
 		return closingdate;
 	}
+	
+	public WebElement getleadsource() {
+		return leadsource;
+	}
 
 	public WebElement getAssigned() {
 		return Assigned;
@@ -60,7 +64,7 @@ public class OppertunityPage {
 
 
 	@FindBy(css = "img[alt='Create Opportunity...']")
-	private WebElement mod;
+	private WebElement module;
 	
 	@FindBy(name = "potentialname")
 	private WebElement OppName;
@@ -76,6 +80,9 @@ public class OppertunityPage {
 	
 	@FindBy(name = "closingdate")
 	private WebElement closingdate;
+	
+	@FindBy(name = "leadsource")
+	private WebElement leadsource;
 	
 	@FindBy(name = "assigned_user_id")
 	private WebElement Assigned;
