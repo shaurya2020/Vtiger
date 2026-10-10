@@ -10,12 +10,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base_test.baseTest;
+import crm_reop.OppertunityPage;
 import genric_utility.WebDriverUtility;
+
 public class CreateOpprtunities extends baseTest {
 	@Test
-	public void createopp() throws IOException, ParseException {
-//	
-		WebElement module = driver.findElement(By.linkText("Opportunities"));
+	public void Oppertunity() throws IOException, ParseException {
+		
+		OppertunityPage OpP = new OppertunityPage(driver);
+		WebElement module = OpP.getLink();
 		module.click();
 
 		WebElement mod = driver.findElement(
@@ -43,20 +46,23 @@ public class CreateOpprtunities extends baseTest {
 		WebElement amount = driver.findElement(By.name("amount"));
 		amount.sendKeys(amt);
 		
-		String Sss = "New Business";
+		String opport_type = "New Business";
 		WebElement ss = driver.findElement(By.name("opportunity_type"));
 		Select singleselect = new Select(ss);
 		
-		singleselect.selectByValue(Sss);
+		singleselect.selectByValue(opport_type);
 		WebElement date = driver.findElement(By.name("closingdate"));
 		date.sendKeys("2026/09/18");
+		
+		String ldd = "Partner";
 		WebElement lead = driver.findElement(By.name("leadsource"));
 		Select ld = new Select(lead);
-		ld.selectByValue("Partner");
+		ld.selectByValue(ldd);
 		
 		WebElement Assigned = driver.findElement(By.name("assigned_user_id"));
 		Select As = new Select(Assigned);
 		As.selectByValue("1");
+		
 		WebElement Sales = driver.findElement(By.name("sales_stage"));
 		Select sl = new Select(Sales);
 		sl.selectByValue("Perception Analysis");
@@ -76,13 +82,10 @@ public class CreateOpprtunities extends baseTest {
 		
 		driver.findElement(By.name("button")).click();
 	
-		String Vopptname = driver.findElement(
-				By.cssSelector("[id='dtlview_Opportunity Name']"))
-				.getText();
-		String Vtype = driver.findElement(
-				By.id("dtlview_Type"))
+		String Vopptname = driver.findElement(By.cssSelector("[id='dtlview_Opportunity Name']")).getText();
+		String actualopport_type = driver.findElement(By.id("dtlview_Type"))
 				.getText();
 		Assert.assertEquals(Vopptname,zd); 
-			Assert.assertEquals(Vtype,Sss); 
+			Assert.assertEquals(actualopport_type,opport_type); 
 }
 }
