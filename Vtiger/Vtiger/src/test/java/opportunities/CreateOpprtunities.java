@@ -15,6 +15,8 @@ import crm_reop.VerifyOppertunityPage;
 import genric_utility.WebDriverUtility;
 
 public class CreateOpprtunities extends baseTest {
+	VerifyOppertunityPage VOpp = new VerifyOppertunityPage(driver);
+	OppertunityPage OpP = new OppertunityPage(driver);
 	@Test
 	public void Oppertunity() throws IOException, ParseException {
 
@@ -26,8 +28,6 @@ public class CreateOpprtunities extends baseTest {
 		String ldd = "Partner";
 		String cloasing_Date = "2026/09/18";
 		
-		VerifyOppertunityPage VOpp = new VerifyOppertunityPage(driver);
-		OppertunityPage OpP = new OppertunityPage(driver);
 		OpP.getmoduleLink().click();
 		OpP.getmodule().click();
 		OpP.getOppName().sendKeys(zd);
